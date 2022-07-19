@@ -20,7 +20,7 @@ table_name
 FROM information_schema.tables 
 WHERE (table_schema = :OWNER OR :OWNER IS NULL)
 AND (table_name = :TABLENAME OR :TABLENAME IS NULL)
-AND TABLE_TYPE = 'BASE TABLE'
+AND TABLE_TYPE in ('BASE TABLE','VIEW')
 ORDER BY table_schema, table_name";
         }
 
